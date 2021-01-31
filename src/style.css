@@ -1,0 +1,300 @@
+html,
+body {
+    height: 100%;
+    font-family: "Montserrat SemiBold";
+}
+
+body {
+    /*background-image: url('https://fsa.zobj.net/crop.php?r=B_2Ug09YRpX5Rndg65ko-DyHaY3MwBt5C0ZJqGw56mOzvYA1NnL9KrTQ6km3lL5TpHQ9xS1KwCVmh4wWylIERdbr-2OXqmQFBtelV9u7783UyBBfeQvxPYI-eWx8FDDnU9GHydgxpTTP3eJJ');*/
+    background-image: url('http://www.mobilmusic.ru/mfile/91/8e/98/1351826.jpg');
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+html,
+body,
+input,
+textarea,
+button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+button[disabled] {
+    opacity: 0.2 !important;
+}
+
+
+/**
+ * Sidebar CSS
+ */
+#content {
+    /*margin: 50px 0;*/
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#content > div.mui-row {
+    max-width: 500px;
+    background: #f4fce3;
+    padding: 50px 10px;
+    border-radius: 5px;
+}
+#sidebar {
+    background-color: #E57373;
+    padding: 15px;
+}
+
+#form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn-blocks {
+    text-align: right;
+    width: 100px;
+}
+.btn-blocks button {
+    opacity: 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.user-info input{
+    max-width: 120px;
+    border: none;
+}
+
+.edited > td {
+    padding: 0;
+}
+.edited > td > div  {
+    padding: 0;
+    margin: 0;
+}
+
+
+.__ed {
+    background-color: #87c4b8;
+}
+
+.user-info.edited .btn-blocks button{
+    opacity: 1;
+}
+
+#user tr:not(.head-title):hover > .btn-blocks button {
+    opacity: 1;
+}
+
+.name-block {
+    font-size: 16px;
+}
+
+.head-title th {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.mui-btn.add-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#mui-overlay {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal {
+    font-family: Monospace;
+    max-width: 400px;
+    max-height: 300px;
+    margin: 150px auto;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 1rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal .content {
+    text-align: left;
+}
+
+/* Notice and Warning CSS */
+#notes:empty {
+    display: none;
+}
+#notes {
+    position: fixed;
+    top: 1em;
+    width: 100%;
+    cursor: default;
+    transition: height 0.45s ease-in-out;
+    -webkit-transition: height 0.45s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+#notes .note-item {
+    max-height: 12em;
+    opacity: 1;
+    will-change: opacity, transform;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    width: 50vw;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    z-index: 2;
+    pointer-events: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    max-width: 20em;
+    font: inherit;
+    line-height: 1.25em;
+    color: #fff;
+    margin: 0 auto 1em auto;
+    transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    padding: 0.75em 1em;
+}
+@media (max-width: 30em) {
+    #notes .note-item {
+        width: 75vw;
+        max-width: none;
+    }
+}
+#notes .note-item[data-show="false"] {
+    pointer-events: none;
+    opacity: 0 !important;
+    max-height: 0 !important;
+    margin-bottom: 0 !important;
+}
+#notes .note-item[data-type="info"] {
+    background-color: rgba(55, 94, 151, 0.72);
+}
+#notes .note-item[data-type="warn"] {
+    background-color: rgba(235, 172, 0, 0.72);
+    animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    -webkit-animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+#notes .note-item[data-type="error"] {
+    background-color: rgba(251, 101, 66, 0.72);
+    animation: shake 0.54s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    -webkit-animation: shake 0.54s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+#notes .note-item[data-type="success"] {
+    background-color: rgba(63, 104, 28, 0.72);
+}
+#notes .note-item .note-item-text {
+    flex: auto;
+    -webkit-flex: auto;
+    -moz-flex: auto;
+    -ms-flex: auto;
+    padding-right: 0.5em;
+    max-width: calc(100% - 1.25em);
+    max-width: -webkit-calc(100% - 1.25em);
+}
+#notes .note-item .note-item-btn {
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTguMyw1LjcxTDE4LjMsNS43MWMtMC4zOS0wLjM5LTEuMDItMC4zOS0xLjQxLDBMMTIsMTAuNTlMNy4xMSw1LjdjLTAuMzktMC4zOS0xLjAyLTAuMzktMS40MSwwbDAsMCBjLTAuMzksMC4zOS0wLjM5LDEuMDIsMCwxLjQxTDEwLjU5LDEyTDUuNywxNi44OWMtMC4zOSwwLjM5LTAuMzksMS4wMiwwLDEuNDFoMGMwLjM5LDAuMzksMS4wMiwwLjM5LDEuNDEsMEwxMiwxMy40MWw0Ljg5LDQuODkgYzAuMzksMC4zOSwxLjAyLDAuMzksMS40MSwwbDAsMGMwLjM5LTAuMzksMC4zOS0xLjAyLDAtMS40MUwxMy40MSwxMmw0Ljg5LTQuODlDMTguNjgsNi43MywxOC42OCw2LjA5LDE4LjMsNS43MXoiLz48L3N2Zz4=)  no-repeat 0 0 / contain;
+    transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+}
+#notes .note-item .note-item-btn:hover {
+    opacity: 0.6;
+}
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+        -webkit-transform: translate3d(-1px, 0, 0);
+        -ms-transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0 0);
+        -webkit-transform: translate3d(2px, 0, 0);
+        -ms-transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+        -webkit-transform: translate3d(-4px, 0, 0);
+        -ms-transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+        -webkit-transform: translate3d(4px, 0, 0);
+        -ms-transform: translate3d(4px, 0, 0);
+    }
+}
+@-webkit-keyframes shake {
+    10%, 90% {
+        -webkit-transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        -webkit-transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        -webkit-transform: translate3d(-4px, 0, 0) t;
+    }
+    40%, 60% {
+        -webkit-transform: translate3d(4px, 0, 0);
+    }
+}
+/* End CSS Notice */
+
+/*Preloader*/
+/*End Preloader*/
+
+@media (min-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 180px;
+        height: 100%;
+        padding-top: 30px;
+    }
+}
+
+/**
+ * Content CSS
+ */
+@media (min-width: 768px) {
+    #content {
+        /*margin-left: 180px;*/
+    }
+}
