@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+    <title>App</title>
+</head>
+<body>
+
+<div id="content" class="mui-container-fluid">
+    <div class="mui-row">
+
+        <div id="list"  class="mui-col-sm-12">
+            <table class="mui-table mui-table--bordered">
+                <tbody id="user"></tbody>
+            </table>
+        </div>
+
+        <div class="mui-col-sm-12" id="form-wrapper">
+            <h3>Добавление пользователей</h3>
+            <form class="mui-form" id="form">
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input id="name" type="text" required>
+                    <label for="name">Имя</label>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input type="phone" id="phone" required>
+                    <label for="phone">Телефон</label>
+                </div>
+                <button disabled id="submit" type="submit" class="mui-btn mui-btn--raised">Создать пользователя</button>
+            </form>
+        </div>
+    </div>
+    <div id="notes"></div>
+</div>
+</body>
+</html>
