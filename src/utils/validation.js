@@ -13,5 +13,4 @@ export function isValid(value, settings = null){
     default:
       return false
   }
-
 }

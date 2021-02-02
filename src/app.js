@@ -19,7 +19,6 @@ function onChangeInput() {
     submitBtn.disabled = !(isValid(nameUser.value, {type: "minLength", value: 2}) && isValid(phoneUser.value, {type: "phone"}))
   }, 700, 1000)()
 }
-
 function submitFormHandler(event) {
   event.preventDefault()
   if(isValid(nameUser.value, {type: "minLength", value: 2}) && isValid(phoneUser.value, {type: "phone"})) {
